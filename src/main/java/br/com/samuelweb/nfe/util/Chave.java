@@ -36,6 +36,25 @@ public class Chave {
         while (cnf.length()<8) { cnf = "0" + cnf; }
         this.cNf = cnf;
     }
+    
+    public Chave(String aamm, String cUF, String cnpj, String mod, String serie, String nnf, String tpEmis, String cnf) {
+
+        while (cUF.length()<2) { cUF = "0" + cUF; }
+        this.cUf = cUF;
+        this.aa = aamm.substring(0, 2);
+        this.mm = aamm.substring(2);
+        while (cnpj.length()<14) { cnpj = "0" + cnpj; }
+        this.cnpj = cnpj;
+        while (mod.length()<2) { mod = "0" + mod; }
+        this.mod = mod;
+        while (serie.length()<3) { serie = "0" + serie; }
+        this.serie = serie;
+        while (nnf.length()<9) { nnf = "0" + nnf; }
+        this.nNf = nnf;
+        this.tpEmis = tpEmis;
+        while (cnf.length()<8) { cnf = "0" + cnf; }
+        this.cNf = cnf;
+    }
 
     private String getChave() {
         return cUf + aa + mm + cnpj + mod + serie + nNf + tpEmis + cNf;
