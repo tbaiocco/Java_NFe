@@ -154,6 +154,10 @@ class Enviar {
 			}
 			NFeAutorizacao4Stub.NfeResultMsg result = stub.nfeAutorizacaoLote(dadosMsg);
 
+			if (config.isLog()) {
+				System.out.println("Xml Retornado do server:\n " + result.getExtraElement().toString());
+			}
+			
 			return XmlUtil.xmlToObject(result.getExtraElement().toString(), TRetEnviNFe.class);
 
 		} catch (RemoteException | XMLStreamException | JAXBException e) {
