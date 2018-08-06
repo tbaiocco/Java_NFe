@@ -65,7 +65,7 @@ class ConsultaXml {
 						config.getTimeout());
 			}
 			NFeConsultaProtocolo4Stub.NfeResultMsg result = stub.nfeConsultaNF(dadosMsg);
-
+System.out.println(result.getExtraElement().toString());
 			return XmlUtil.xmlToObject(result.getExtraElement().toString(), TRetConsSitNFe.class);
 
 		} catch (RemoteException | XMLStreamException | JAXBException e) {
